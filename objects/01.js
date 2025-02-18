@@ -99,25 +99,52 @@ const useres = [
     { id: 3, name: "Charlie" } // No address
   ];
 
-  
+
 
 
 
 // js
 // Copy
 // Edit
-// const users = [
-//   {
-//     id: 1,
-//     name: "Alice",
-//     address: { street: "123 Main St", city: "New York", zip: "10001" }
-//   },
-//   {
-//     id: 2,
-//     name: "Bob",
-//     address: { street: "456 Elm St", city: "Los Angeles", zip: "90001" }
-//   }
-// ];
+const person = [
+  {
+    id: 1,
+    name: "Alice",
+    address: { street: "123 Main St", city: "New York", zip: "10001" }
+  },
+  {
+    id: 2,
+    name: "Bob",
+    address: { street: "456 Elm St", city: "Los Angeles", zip: "90001" }
+  }
+];
+
+
+function extractAddresses(person){
+   const result = person.filter((item)=>item.address).map((user)=>({
+userId:user.id,
+     address:user.address,
+     city:user.city
+})
+
+)
+
+     
+
+
+
+
+
+
+
+return result
+
+
+}
+console.log(extractAddresses(person))
+
+
+
 // Tasks:
 // Write a function extractAddresses(users) that returns an array of addresses like this:
 // js
